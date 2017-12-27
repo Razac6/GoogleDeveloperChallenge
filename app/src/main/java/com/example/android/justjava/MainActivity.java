@@ -9,7 +9,6 @@
 package com.example.android.justjava;
 
 
-
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -22,6 +21,8 @@ import java.text.NumberFormat;
  */
 public class MainActivity extends AppCompatActivity {
 
+    int quantity = 2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,10 +33,34 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int numberOfCoffee = 2;
-        display(numberOfCoffee);
-        displayPrice(numberOfCoffee * 5);
+        int price = quantity * 5;
+        String caffeeName = "Lungo";
+        caffeeName = caffeeName + " Mild" ;
+        String priceMessage = "Total: " + " $" + price + "\n" + caffeeName;
+        displayMessage(priceMessage);
     }
+
+//    Increment method
+
+    public void increment(View view) {
+        quantity = quantity + 1;
+        display(quantity);
+    }
+    //    Decrement method
+
+    public void decrement(View view) {
+        quantity = quantity - 1;
+        display(quantity);
+    }
+
+    /**
+     * This method displays the given text on the screen.
+     */
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
+    }
+
 
     /**
      * This method displays the given price on the screen.
