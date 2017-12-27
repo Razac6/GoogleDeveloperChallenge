@@ -9,7 +9,6 @@
 package com.example.android.justjava;
 
 
-
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -21,6 +20,8 @@ import java.text.NumberFormat;
  * This app displays an order form to order coffee.
  */
 public class MainActivity extends AppCompatActivity {
+
+    int quantity = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,14 +41,13 @@ public class MainActivity extends AppCompatActivity {
 //    Increment method
 
     public void increment(View view) {
-        int quantity = 2;
-        quantity = quantity + 1 + quantity;
+
+        quantity = quantity + 1;
         display(quantity);
     }
     //    Decrement method
 
     public void decrement(View view) {
-        int quantity = 2;
         quantity = quantity - 1;
         display(quantity);
     }
