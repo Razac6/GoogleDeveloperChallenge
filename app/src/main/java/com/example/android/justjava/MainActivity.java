@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        String priceMessage = "Free";
+        String priceMessage = "Amount due " + "$" + quantity * 5;
         displayMessage(priceMessage);
     }
 
